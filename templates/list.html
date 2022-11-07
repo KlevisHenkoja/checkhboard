@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="background-color: {{color1}} ; color:{{color2}}; text-align:  center; ">***Checkerboard***</h1>
+    <div style="display: flex; justify-content: center; ">
+    <table>
+        {% for rrjesht in range(0,gjatesia) %}
+        <tr>
+            {% for kolon in range(0,gjeresia) %}
+                {% if rrjesht % 2 ==0 %}
+                    {% if kolon %2 ==0 %}
+                    <td style="background-color:{{color1}}; width:100px; height:100px"></td>
+                    {% endif %}
+                    {% if kolon %2 !=0 %}
+                    <td style="background-color:{{color2}}; width:100px; height:100px"></td>
+                    {% endif %}
+                {% endif %}
+
+
+                {% if rrjesht % 2 !=0 %}
+                    {%  if kolon %2 ==0 %}
+                    <td style="background-color:{{color2}}; width:100px; height:100px"></td>
+                    {% endif %}
+                    {% if kolon %2 !=0 %}
+                    <td style="background-color:{{color1}}; width:100px; height:100px"></td>
+                    {% endif %}
+                {% endif %}
+
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+      </table>
+    </div>
+</body>
+</html>
